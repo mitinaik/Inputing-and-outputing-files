@@ -1,0 +1,59 @@
+# Inputing-and-outputing-files
+//Miti Naik
+//july 31 2015
+
+import java.io.*;
+
+import java.util.Scanner;
+
+public class uppercaseconverter
+{
+   public static void main(String[] args) throws IOException
+   {
+      String filename1;
+      String filename2;
+      
+      //Ask user to input the file name
+      Scanner keyboard = new Scanner(System.in);
+      
+      System.out.print(" Enter the first name of the file");
+      filename1 = keyboard.nextLine();
+      
+      System.out.print(" Enter the second name of the file");
+      filename2 = keyboard.nextLine();
+      
+      FileReader reader = new FileReader(filename1);
+      Scanner inputFile = new Scanner(reader);
+
+
+                  
+      while(inputFile.hasNext())
+      {
+      String s= inputFile.nextLine();
+      
+      String upper = s.toUpperCase();
+      FileWriter fWriter = new FileWriter(filename2);
+       PrintWriter outputFile = new PrintWriter(fWriter);
+
+
+
+      outputFile.println(upper);
+       outputFile.close();
+
+     
+      } 
+     
+      
+
+            
+       // to close the file
+           inputFile.close();
+      
+            
+
+      
+      
+
+   }
+   
+}
